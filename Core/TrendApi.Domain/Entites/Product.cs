@@ -14,7 +14,7 @@ namespace TrendApi.Domain.Entites
         public required int BrandId { get; set; }
         public required decimal Price { get; set; }
         public required decimal Discount { get; set; }
-        public Brands Brands { get; set; }
+        public Brand Brands { get; set; }
 
         public ICollection<Category> Categories { get; set; }
         

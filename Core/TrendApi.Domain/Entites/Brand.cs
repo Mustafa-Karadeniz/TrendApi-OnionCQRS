@@ -3,13 +3,13 @@ using TrendApi.Domain.Common;
 
 namespace TrendApi.Domain.Entites
 {
-    public class Brands : EntityBase
+    public class Brand : EntityBase
     {
-        public Brands()
+        public Brand()
         {
             
         }
-        public Brands(string name)
+        public Brand(string name)
         {
             Name = name;
         }
