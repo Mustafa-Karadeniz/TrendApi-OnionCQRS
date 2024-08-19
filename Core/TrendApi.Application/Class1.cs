@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary1
+﻿namespace TrendApi.Application
 {
     public class Class1
     {
