@@ -6,31 +6,31 @@ using TrendApi.Domain.Entites;
 
 namespace TrendApi.Persistence.Configurations;
 
-public class BrandConfiguration : IEntityTypeConfiguration<Brands>
+public class BrandConfiguration : IEntityTypeConfiguration<Brand>
 {
-    public void Configure(EntityTypeBuilder<Brands> builder)
+    public void Configure(EntityTypeBuilder<Brand> builder)
     {
         builder.Property(x => x.Name).HasMaxLength(256);
         
 
         Faker faker = new("tr");
-        Brands brand1 = new()
+        Brand brand1 = new()
         {
             Id = 1,
             Name = faker.Commerce.Department(),
             CreatedDate = DateTime.Now,
             IsDeleted = false
         };
-        Brands brand2 = new()
+        Brand brand2 = new()
         {
-            Id = 1,
+            Id = 2,
             Name = faker.Commerce.Department(),
             CreatedDate = DateTime.Now,
             IsDeleted = false
         };
-        Brands brand3 = new()
+        Brand brand3 = new()
         {
-            Id = 1,
+            Id = 3,
             Name = faker.Commerce.Department(),
             CreatedDate = DateTime.Now,
             IsDeleted = true

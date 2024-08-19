@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Persistence", "Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Infrastructure", "Infrastructure\TrendApi.Infrastructure\TrendApi.Infrastructure.csproj", "{C3D618CD-16F3-4460-85B2-FCC192010CD8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Api", "Presentation\TrendApi.Api\TrendApi.Api.csproj", "{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendAPI.Api", "Presentation\TrendApi.Api\TrendAPI.Api.csproj", "{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Application", "Core\TrendApi.Application\TrendApi.Application.csproj", "{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0}"
 EndProject
