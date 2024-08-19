@@ -19,9 +19,10 @@ namespace TrendApi.Domain.Entites
             Description = description;
             CategoryId = categoryId;            
         }
-        public required string Title { get; set; }
-        public required string Description { get; set; }
-        public required int CategoryId { get; set; }
+        public int Id { get; set; }
+        public  string Title { get; set; }
+        public  string Description { get; set; }
+        public  int CategoryId { get; set; }
         public Category Category { get; set; }
     }
 }
