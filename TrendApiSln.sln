@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BAACA6B2-8BBB-4560-B199-1E494A68E52A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{095D3F39-3107-4850-9F40-DE4BB7A0D783}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{2AA8E193-6CEA-40CD-82E5-443735B25F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendApi.Application", "Core\ClassLibrary1\TrendApi.Application.csproj", "{B39EB3A6-1734-49B3-A6DC-6F23133E71B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendApi.Domain", "Core\TrendApi.Domain\TrendApi.Domain.csproj", "{2BC66526-75EA-4079-9DEE-747F1D92D8C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendApi.Persistence", "Infrastructure\TrendApi.Persistence\TrendApi.Persistence.csproj", "{A34B1652-8AF0-4030-9E63-7E15A453CB50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendApi.Infrastructure", "Infrastructure\TrendApi.Infrastructure\TrendApi.Infrastructure.csproj", "{C3D618CD-16F3-4460-85B2-FCC192010CD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendApi.Api", "Presentation\TrendApi.Api\TrendApi.Api.csproj", "{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B39EB3A6-1734-49B3-A6DC-6F23133E71B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39EB3A6-1734-49B3-A6DC-6F23133E71B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39EB3A6-1734-49B3-A6DC-6F23133E71B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39EB3A6-1734-49B3-A6DC-6F23133E71B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC66526-75EA-4079-9DEE-747F1D92D8C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC66526-75EA-4079-9DEE-747F1D92D8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC66526-75EA-4079-9DEE-747F1D92D8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC66526-75EA-4079-9DEE-747F1D92D8C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34B1652-8AF0-4030-9E63-7E15A453CB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34B1652-8AF0-4030-9E63-7E15A453CB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34B1652-8AF0-4030-9E63-7E15A453CB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34B1652-8AF0-4030-9E63-7E15A453CB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D618CD-16F3-4460-85B2-FCC192010CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D618CD-16F3-4460-85B2-FCC192010CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D618CD-16F3-4460-85B2-FCC192010CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D618CD-16F3-4460-85B2-FCC192010CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B39EB3A6-1734-49B3-A6DC-6F23133E71B1} = {BAACA6B2-8BBB-4560-B199-1E494A68E52A}
+		{2BC66526-75EA-4079-9DEE-747F1D92D8C1} = {BAACA6B2-8BBB-4560-B199-1E494A68E52A}
+		{A34B1652-8AF0-4030-9E63-7E15A453CB50} = {095D3F39-3107-4850-9F40-DE4BB7A0D783}
+		{C3D618CD-16F3-4460-85B2-FCC192010CD8} = {095D3F39-3107-4850-9F40-DE4BB7A0D783}
+		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3} = {2AA8E193-6CEA-40CD-82E5-443735B25F47}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A066725A-CF69-434E-A10A-61C1509C33FA}
+	EndGlobalSection
+EndGlobal
