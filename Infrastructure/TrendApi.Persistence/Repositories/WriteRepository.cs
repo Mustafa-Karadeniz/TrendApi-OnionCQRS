@@ -30,6 +30,7 @@ namespace YoutubeApi.Persistence.Repositories
             return entity;
         }
         public async Task HardDeleteAsync(T entity)
+
         {
             await Task.Run(() => Table.Remove(entity));
         }
