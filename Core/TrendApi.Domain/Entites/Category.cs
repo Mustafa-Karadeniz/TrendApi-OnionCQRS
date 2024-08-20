@@ -15,9 +15,9 @@ namespace TrendApi.Domain.Entites
             Priorty = priorty;
         }
 
-        public required int ParentId { get; set; }
-        public required string Name { get; set; }
-        public required int Priorty { get; set; }
+        public  int ParentId { get; set; }
+        public string Name { get; set; }
+        public int Priorty { get; set; }
 
         //one-to-many relationships established(tr:bire çok ilişki kurdum)
         public ICollection<Detail> Details { get; set; }
