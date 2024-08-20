@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\TrendApi.Application\TrendApi.Application.csproj" />
     <ProjectReference Include="..\..\Core\TrendApi.Domain\TrendApi.Domain.csproj" />
   </ItemGroup>
 
