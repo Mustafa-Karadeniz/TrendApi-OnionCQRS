@@ -1,7 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TrendApi.Application.Interface.Repositories;
 using TrendApi.Persistence.Context;
+using TrendApi.Persistence.UnitOfWorks;
+using YoutubeApi.Application.Interfaces.Repositories;
+using YoutubeApi.Persistence.Repositories;
 
 namespace TrendApi.Persistence;
 
@@ -13,5 +17,10 @@ public static class Registration
     {
         services.AddDbContext<AppDbContext>(opt => 
         opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+        services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }

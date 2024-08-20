@@ -39,12 +39,5 @@ namespace YoutubeApi.Persistence.Repositories
         {
             await Task.Run(() => Table.RemoveRange(entity));
         }
-
-        public async Task SoftDeleteAsync(T entity)
-        {
-            await Task.Run(() => Table.Update(entity));
-        }
-
-
     }
 }
