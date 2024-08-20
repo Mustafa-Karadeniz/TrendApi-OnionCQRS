@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrendApi.Domain.Common
 {
-    internal interface IEntityBase
+    public interface IEntityBase
     {
     }
 }
