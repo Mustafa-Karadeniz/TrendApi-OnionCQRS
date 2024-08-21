@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrendApi.Domain.Common
+namespace TrendApi.Domain.Common;
+
+public class EntityBase : IEntityBase
 {
-    public class EntityBase : IEntityBase
-    {
-        public int Id { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public bool IsDeleted { get; set; } = false;
-    }
+    public int Id { get; set; }
+    public DateTime CreatedDate { get; set; } = DateTime.Now;
+    public bool IsDeleted { get; set; } = false;
 }

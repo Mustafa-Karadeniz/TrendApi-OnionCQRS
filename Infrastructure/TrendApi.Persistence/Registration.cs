@@ -5,6 +5,7 @@ using TrendApi.Application.Interface.Repositories;
 using TrendApi.Persistence.Context;
 using TrendApi.Persistence.UnitOfWorks;
 using YoutubeApi.Application.Interfaces.Repositories;
+using TrendApi.Application.Interface.IUnitOfWorks;
 using YoutubeApi.Persistence.Repositories;
 
 namespace TrendApi.Persistence;
