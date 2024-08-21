@@ -5,7 +5,7 @@ using TrendApi.Domain.Entites;
 
 namespace TrendApi.Persistence.Configurations;
 
-internal class DetailConfiguration : IEntityTypeConfiguration<Detail>
+public class DetailConfiguration : IEntityTypeConfiguration<Detail>
 {
     public void Configure(EntityTypeBuilder<Detail> builder)
     {

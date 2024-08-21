@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendAPI.Api", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Application", "Core\TrendApi.Application\TrendApi.Application.csproj", "{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrendApi.Mapper", "Core\TrendApi.Mapper\TrendApi.Mapper.csproj", "{A52AA2AD-4F02-4137-9B0E-AD43772352A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52AA2AD-4F02-4137-9B0E-AD43772352A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52AA2AD-4F02-4137-9B0E-AD43772352A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52AA2AD-4F02-4137-9B0E-AD43772352A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52AA2AD-4F02-4137-9B0E-AD43772352A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{C3D618CD-16F3-4460-85B2-FCC192010CD8} = {095D3F39-3107-4850-9F40-DE4BB7A0D783}
 		{775CDAA8-4B9B-47A1-A6D2-4B4CD9A623F3} = {2AA8E193-6CEA-40CD-82E5-443735B25F47}
 		{A811CDED-8E49-4F26-BCF9-5B0DA849ADE0} = {BAACA6B2-8BBB-4560-B199-1E494A68E52A}
+		{A52AA2AD-4F02-4137-9B0E-AD43772352A3} = {BAACA6B2-8BBB-4560-B199-1E494A68E52A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A066725A-CF69-434E-A10A-61C1509C33FA}
