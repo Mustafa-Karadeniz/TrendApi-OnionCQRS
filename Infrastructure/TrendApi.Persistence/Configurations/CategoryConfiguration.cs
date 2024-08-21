@@ -46,7 +46,8 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             IsDeleted = false,
             CreatedDate = DateTime.Now,
         };
+        //bulk insert sql
+        //builder.SaveChanges(category1, category2, parent1, parent2);
         builder.HasData(category1, category2, parent1, parent2);
-
     }
 }

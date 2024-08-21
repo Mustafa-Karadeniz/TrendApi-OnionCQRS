@@ -1,4 +1,5 @@
 using TrendApi.Persistence;
+using TrendApi.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddApplication();//Kendisi Registration sýnýfýnda kendi methodunu kendisi alýyor.Proje referansý vermeye gerek yok(Daha düþük baðýmlýlýk ile yönetim).
 
 var app = builder.Build();
 

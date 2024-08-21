@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrendApi.Domain.Common
+namespace TrendApi.Domain.Common;
+
+public interface IEntityBase
 {
-    public interface IEntityBase
-    {
-    }
 }
