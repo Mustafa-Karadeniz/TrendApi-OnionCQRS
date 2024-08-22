@@ -1,5 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TrendApi.Application.Features.Products.Commands.CreateProduct;
+using TrendApi.Application.Features.Products.Commands.UpdateProduct;
+using TrendApi.Application.Features.Products.Commands.DeleteProduct;
 using TrendApi.Application.Features.Products.Queries.GetAllProducts;
 
 namespace TrendAPI.Api.Controllers
@@ -21,5 +24,26 @@ namespace TrendAPI.Api.Controllers
             var response = await _mediator.Send(new GetAllProductsQueryRequest());
             return Ok(response);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct(CreateProductCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(DeleteProductCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+
     }
 }
