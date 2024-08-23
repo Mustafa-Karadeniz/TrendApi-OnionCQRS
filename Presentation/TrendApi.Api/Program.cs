@@ -1,6 +1,7 @@
 using TrendApi.Application;
 using TrendApi.Persistence;
 using TrendApi.Mapper;
+using TrendApi.Application.Exceptions;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +21,6 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
-//Kendisi Registration sýnýfýnda kendi methodunu kendisi alýyor.Proje referansý vermeye gerek yok(Daha düþük baðýmlýlýk ile yönetim).
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
@@ -33,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureExceptionHandlingMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();
