@@ -12,7 +12,7 @@ namespace TrendApi.Application.Features.Products.Queries.GetAllProducts
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork,IMapper mapper)
+        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -22,7 +22,7 @@ namespace TrendApi.Application.Features.Products.Queries.GetAllProducts
         {
             var products = await _unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
             var brand = _mapper.Map<BrandDto, Brand>(new Brand());
-           
+
 
             //foreach (var product in products) 
             //{
@@ -42,7 +42,8 @@ namespace TrendApi.Application.Features.Products.Queries.GetAllProducts
             }
 
 
-            throw new Exception("hata mesajı");
+            return map;
         }
     }
+
 }

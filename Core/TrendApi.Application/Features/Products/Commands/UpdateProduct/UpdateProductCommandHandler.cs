@@ -3,7 +3,6 @@ using TrendApi.Application.Interface.AutoMapper;
 using TrendApi.Application.Interface.IUnitOfWorks;
 using TrendApi.Domain.Entites;
 
-
 namespace TrendApi.Application.Features.Products.Commands.UpdateProduct;
 
 public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest>
@@ -20,8 +19,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
     {
         var product = await _unitOfWork.GetReadRepository<Product>().GetAsync(x=>x.Id == request.Id && !x.IsDeleted); //!x.Isdeleted eşittir x..IsDeleted = false anlamına gelir.
         var map =  _mapper.Map<Product, UpdateProductCommandRequest>(request);
-        var productCategories1 = await _unitOfWork.GetReadRepository<ProductCategory>()
-            .GetAllAsync(x=>x.ProductId == product.Id);
+        var productCategories1 = await/*son of a ******/ _unitOfWork.GetReadRepository<ProductCategory>().GetAllAsync(x=>x.ProductId == product.Id);
         
         await _unitOfWork.GetWriteRepository<ProductCategory>()
             .HardDeleteRangeAsync((IList<ProductCategory>)productCategories1);
