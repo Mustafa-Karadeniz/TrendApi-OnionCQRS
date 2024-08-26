@@ -4,7 +4,7 @@ using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Products.Commands.CreateProduct;
 
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest>
+public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, Unit>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -12,12 +12,11 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
     {
         _unitOfWork = unitOfWork;
     }
-    public async Task Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
     {
         Product product = new(request.Title, request.Description, request.BrandId, request.Price, request.Discount );
 
         await _unitOfWork.GetWriteRepository<Product>().AddAsync(product);
-        
         if(await _unitOfWork.SaveAsync() > 0)
         {
             foreach (var categoryId in request.CategoryIds)
@@ -30,6 +29,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
             }
 
             await _unitOfWork.SaveAsync();
-        } 
+        }
+        return Unit.Value;
     }
 }

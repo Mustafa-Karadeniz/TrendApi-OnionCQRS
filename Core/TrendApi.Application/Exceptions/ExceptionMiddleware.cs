@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using SendGrid.Helpers.Errors.Model;
-using System.ComponentModel.DataAnnotations;
 
 
 namespace TrendApi.Application.Exceptions
@@ -24,6 +24,14 @@ namespace TrendApi.Application.Exceptions
             var  statusCode = GetStatusCode(exception);
             httpContext.Response.ContentType = "appplication/json";
             httpContext.Response.StatusCode = statusCode;
+
+            if(exception.GetType() == typeof(ValidationException))
+                return httpContext.Response.WriteAsync(new ExceptionModel
+                {
+                    Errors = ((ValidationException)exception).Errors.Select(x => x.ErrorMessage),
+                    StatusCode = StatusCodes.Status400BadRequest
+                }.ToString());
+            
 
             List<string> errors = new()
             {
