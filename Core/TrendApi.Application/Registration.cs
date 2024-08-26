@@ -13,5 +13,7 @@ public static class Registration
         services.AddMediatR(configuration => configuration.RegisterServicesFromAssembly(assembly));
         services.AddTransient<ExceptionMiddleware>();
         
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehaviour<,>));
+        
     }
 }
