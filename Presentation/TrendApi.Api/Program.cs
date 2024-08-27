@@ -2,6 +2,7 @@ using TrendApi.Application;
 using TrendApi.Persistence;
 using TrendApi.Mapper;
 using TrendApi.Application.Exceptions;
+using YoutubeApi.Application;
 
 
 var builder = WebApplication.CreateBuilder(args);
