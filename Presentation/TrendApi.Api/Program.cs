@@ -1,8 +1,8 @@
-using TrendApi.Application;
 using TrendApi.Persistence;
 using TrendApi.Mapper;
 using TrendApi.Application.Exceptions;
 using YoutubeApi.Application;
+using YoutubeApi.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +22,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
