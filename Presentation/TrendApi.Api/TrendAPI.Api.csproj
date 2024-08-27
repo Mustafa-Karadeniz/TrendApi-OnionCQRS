@@ -16,6 +16,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\Core\TrendApi.Mapper\TrendApi.Mapper.csproj" />
+		<ProjectReference Include="..\..\Infrastructure\TrendApi.Infrastructure\TrendApi.Infrastructure.csproj" />
 		<ProjectReference Include="..\..\Infrastructure\TrendApi.Persistence\TrendApi.Persistence.csproj" />
 	</ItemGroup>
 
