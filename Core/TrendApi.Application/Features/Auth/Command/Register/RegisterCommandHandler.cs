@@ -10,7 +10,7 @@ using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Auth.Command.Register;
 
-public class RegisterCommandHandler : BaseHandler, IRequestHandler<RegisterCommandRequest, Unit> 
+public class RegisterCommandHandler : BaseHandler, IRequestHandler<RegisterCommandRequest, Unit>
 {
 
     private readonly AuthRules authRules;
