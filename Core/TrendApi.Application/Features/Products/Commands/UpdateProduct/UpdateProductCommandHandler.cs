@@ -1,19 +1,17 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using TrendApi.Application.Base;
 using TrendApi.Application.Interface.AutoMapper;
 using TrendApi.Application.Interface.IUnitOfWorks;
 using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Products.Commands.UpdateProduct;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest , Unit>
+public class UpdateProductCommandHandler :BaseHandler, IRequestHandler<UpdateProductCommandRequest , Unit>
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper _mapper;
-
-    public UpdateProductCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+    public UpdateProductCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
     {
-        _unitOfWork = unitOfWork;
-        _mapper = mapper;
+
     }
     public async Task<Unit> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
     {

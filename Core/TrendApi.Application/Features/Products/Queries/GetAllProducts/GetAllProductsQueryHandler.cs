@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using TrendApi.Application.Base;
 using TrendApi.Application.DTOs;
 using TrendApi.Application.Interface.AutoMapper;
 using TrendApi.Application.Interface.IUnitOfWorks;
@@ -7,15 +9,13 @@ using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Products.Queries.GetAllProducts
 {
-    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
+    public class GetAllProductsQueryHandler :BaseHandler, IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
 
-        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+
+        public GetAllProductsQueryHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
+
         }
 
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
