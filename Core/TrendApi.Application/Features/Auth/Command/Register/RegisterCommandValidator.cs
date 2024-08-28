@@ -25,10 +25,10 @@ public class RegisterCommandValidator : AbstractValidator<RegisterCommandRequest
             .NotEmpty()
             .WithName("Şifre:");
 
-        RuleFor(x=>x.ConfirmedPassword)
+        RuleFor(x => x.ConfirmedPassword)
             .MinimumLength(6)
             .NotEmpty()
-            .Equal(x=>x.Password)
+            .Equal(x => x.Password)
             .WithName("Şifre Tekrarı:");
 
 

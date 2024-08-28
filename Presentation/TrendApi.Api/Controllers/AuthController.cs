@@ -1,6 +1,10 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
+using TrendApi.Application.Features.Auth.Command.Login;
 using TrendApi.Application.Features.Auth.Command.Register;
+using TrendApi.Application.Features.Auth.Command.Revoke;
 
 namespace TrendAPI.Api.Controllers;
 
@@ -21,4 +25,22 @@ public class AuthController : ControllerBase
         await _mediator.Send(request);
         return StatusCode(StatusCodes.Status201Created);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginCommandRequest request)
+    {
+        var response =  await _mediator.Send(request);  
+        return StatusCode(StatusCodes.Status200OK, response);
+    }
+
+    
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> Revoke(RevokeCommandRequest request)
+    {
+        await _mediator.Send(request);
+        return StatusCode(StatusCodes.Status200OK);
+    }
+
 }
