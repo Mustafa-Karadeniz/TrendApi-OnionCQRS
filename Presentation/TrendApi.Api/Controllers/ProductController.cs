@@ -9,11 +9,11 @@ namespace TrendAPI.Api.Controllers
 {
     [Route("api/[controller]/[action]")]// action koyduğun seferde IActionResult İsmini alır.
     [ApiController]
-    public class ProductCotroller : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ProductCotroller(IMediator mediator)
+        public ProductController(IMediator mediator)
         {
             _mediator = mediator;
         }

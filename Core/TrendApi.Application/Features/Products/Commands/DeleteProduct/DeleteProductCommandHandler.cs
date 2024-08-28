@@ -1,16 +1,20 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using TrendApi.Application.Base;
+using TrendApi.Application.Features.Products.Rules;
+using TrendApi.Application.Interface.AutoMapper;
 using TrendApi.Application.Interface.IUnitOfWorks;
 using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Products.Commands.DeleteProduct;
 
-public class DeleteProductCommandHandler: IRequestHandler<DeleteProductCommandRequest, Unit>
+public class DeleteProductCommandHandler:BaseHandler, IRequestHandler<DeleteProductCommandRequest, Unit>
  {
-    private readonly IUnitOfWork _unitOfWork;
 
-    public DeleteProductCommandHandler(IUnitOfWork unitOfWork)
+
+    public DeleteProductCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
     {
-        _unitOfWork = unitOfWork;
+        
     }
 
     public async Task<Unit> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)

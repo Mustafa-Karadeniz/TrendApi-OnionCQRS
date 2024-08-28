@@ -1,18 +1,21 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using TrendApi.Application.Base;
 using TrendApi.Application.Features.Products.Rules;
+using TrendApi.Application.Interface.AutoMapper;
 using TrendApi.Application.Interface.IUnitOfWorks;
 using TrendApi.Domain.Entites;
 
 namespace TrendApi.Application.Features.Products.Commands.CreateProduct;
 
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, Unit>
+public class CreateProductCommandHandler :BaseHandler, IRequestHandler<CreateProductCommandRequest, Unit>
 {
-    private readonly IUnitOfWork _unitOfWork;
+    
     private readonly ProductRules _productRules;
 
-    public CreateProductCommandHandler(IUnitOfWork unitOfWork, ProductRules productRules)
+    public CreateProductCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, ProductRules productRules) : base(mapper, unitOfWork, httpContextAccessor)
     {
-        _unitOfWork = unitOfWork;
+        
         _productRules = productRules;
     }
     public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
