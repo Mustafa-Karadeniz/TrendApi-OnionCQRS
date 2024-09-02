@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
@@ -36,11 +37,11 @@ public class AuthController : ControllerBase
     
 
     [HttpPost]
-    [Authorize]
     public async Task<IActionResult> Revoke(RevokeCommandRequest request)
     {
-        await _mediator.Send(request);
+        await _mediator.Send(request); 
         return StatusCode(StatusCodes.Status200OK);
+       
     }
 
 }

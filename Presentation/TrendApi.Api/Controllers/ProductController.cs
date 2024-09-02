@@ -20,7 +20,7 @@ namespace TrendAPI.Api.Controllers
         }
 
         [HttpGet]
-        
+        [Authorize]
         public async Task<IActionResult> GetAllProducts()
         {
             var response = await _mediator.Send(new GetAllProductsQueryRequest());

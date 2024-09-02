@@ -26,6 +26,7 @@ public class RevokeCommandHandler : BaseHandler, IRequestHandler<RevokeCommandRe
         await authRules.EmailAddressShouldBeValid(user);
 
         user.RefreshToken = null;
+        
         await userManager.UpdateAsync(user);
 
         return Unit.Value;
