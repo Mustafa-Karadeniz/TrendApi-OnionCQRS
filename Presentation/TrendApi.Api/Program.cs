@@ -4,6 +4,8 @@ using TrendApi.Application.Exceptions;
 using YoutubeApi.Application;
 using YoutubeApi.Infrastructure;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +31,7 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo {Title = "Trend API", Version = "v1", Description = " Trend API Swagger Client." });
@@ -68,6 +71,7 @@ if (app.Environment.IsDevelopment())
 
 app.ConfigureExceptionHandlingMiddleware();
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 
