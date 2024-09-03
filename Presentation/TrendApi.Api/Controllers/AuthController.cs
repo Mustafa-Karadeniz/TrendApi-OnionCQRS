@@ -1,11 +1,9 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using TrendApi.Application.Features.Auth.Command.Login;
 using TrendApi.Application.Features.Auth.Command.Register;
 using TrendApi.Application.Features.Auth.Command.Revoke;
+using TrendApi.Application.Features.Auth.Command.RevokeAll;
 
 namespace TrendAPI.Api.Controllers;
 
@@ -41,7 +39,13 @@ public class AuthController : ControllerBase
     {
         await _mediator.Send(request); 
         return StatusCode(StatusCodes.Status200OK);
-       
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> RevokeAll()
+    {
+        await _mediator.Send(new RevokeAllCommandRequest());
+        return StatusCode(StatusCodes.Status200OK);
     }
 
 }

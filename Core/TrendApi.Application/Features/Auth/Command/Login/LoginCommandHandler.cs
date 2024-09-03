@@ -27,6 +27,7 @@ public class LoginCommandHandler : BaseHandler , IRequestHandler<LoginCommandReq
         _tokenService = tokenService;
         _authRules = authRules;
     }
+    
     public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
     {
         User user = await _userManager.FindByEmailAsync(request.Email);

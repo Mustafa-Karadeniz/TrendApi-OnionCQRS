@@ -9,7 +9,7 @@ using TrendApi.Application.Interface.Tokens;
 using TrendApi.Domain.Entites;
 
 namespace TrendApi.Infrastructure.Tokens;
-
+    
 public class TokenService : ITokenService
 {
     private readonly UserManager<User> _userManager;
